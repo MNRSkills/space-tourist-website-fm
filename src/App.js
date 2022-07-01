@@ -2,16 +2,20 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/home";
 import Layout from "./components/Layout/layout";
 import Destination from "./components/pages/destination";
-import Navigation from "./components/Layout/navigation";
+import Crew from "./components/pages/crew"
+import DataManger from "./components/Manager/dataManager";
 
 const App = () => {
   return (
     <div className='App'>
-      <Navigation />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/destination' element={<Destination />} />
-      </Routes>
+      <Layout>
+        <DataManger/>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/destination' element={<Destination />} />
+          <Route path='/crew' element={<Crew/>}/>
+        </Routes>
+      </Layout>
     </div>
   );
 };
