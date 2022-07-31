@@ -1,12 +1,18 @@
+import React, { useState, useEffect } from "react";
 import data from "../../data.json";
+import DataManger from "../Manager/dataManager";
 
-const Crew = () => {
-    console.log("THIS IS DATA", data.crew);
+function Crew() {
+  const [crew, setMember] = useState([]);
+
+  useEffect(() => {
+    setMember(data.crew);
+  }, []);
   return (
-    <div>
-      <h1> Crew</h1>
+    <div className='crewName'>
+      This is the crew page <DataManger crewMember={crew} />
     </div>
   );
-};
+}
 
 export default Crew;
