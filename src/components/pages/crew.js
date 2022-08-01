@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import data from "../../data.json";
-import DataManger from "../Manager/dataManager";
+import CrewManager from "../Manager/crewManager";
 
 function Crew() {
   const [crew, setMember] = useState([]);
@@ -10,7 +10,9 @@ function Crew() {
   }, []);
   return (
     <div className='crewName'>
-      This is the crew page <DataManger crewMember={crew} />
+      {crew.map((crewMember, index) => {
+        return <CrewManager people={crewMember} key={index} />;
+      })}
     </div>
   );
 }

@@ -3,7 +3,6 @@ import Home from "./components/pages/home";
 import Layout from "./components/Layout/layout";
 import Destination from "./components/pages/destination";
 import Crew from "./components/pages/crew";
-import DataManger from "./components/Manager/dataManager";
 
 const App = () => {
   return (
