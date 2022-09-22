@@ -1,11 +1,15 @@
 import React from "react";
-import data from "../../data.json";
+import { Title, Message } from "./Helpers/helperFunc";
 
-function DataManger(props) {
-  console.log("Thiis is the crew", props.crewMember);
-  // console.log("These are the places", props.location);
+const DestManger = (props) => {
+  console.log("PROPS IN MNAGEER", props.place.name);
 
-  return <div className='dataManger'></div>;
-}
+  return (
+    <div className='destinationItems'>
+      <Title title={props.place.title} />
+      <Message message={props.place} />
+    </div>
+  );
+};
 
-export default DataManger;
+export default DestManger;
