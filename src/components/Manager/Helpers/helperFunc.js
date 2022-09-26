@@ -1,38 +1,50 @@
 export const SliderBtn = (props) => {
   //NEEDS STYLING
   return (
-    <ul>
-      <li onClick={(e) => props.nextPlace(e)}>
-        <span>MOON</span>{" "}
-      </li>
-      <li onClick={(e) => props.nextPlace(e)}>
-        <span>MARS</span>
-      </li>
-      <li onClick={(e) => props.nextPlace(e)}>
-        <span>EUROPA</span>
-      </li>
-      <li onClick={(e) => props.nextPlace(e)}>
-        <span>TITAN</span>
-      </li>
-    </ul>
+    <div className={`${props.className}_block`}>
+      <ul className={`${props.className}_list`}>
+        <li className={`${props.className}_list-name`} onClick={props.onChange}>
+          Moon
+        </li>
+
+        <li className={`${props.className}_list-name`} onClick={props.onChange}>
+          Mars
+        </li>
+        <li className={`${props.className}_list-name`} onClick={props.onChange}>
+          <span>Europa</span>
+        </li>
+        <li className={`${props.className}_list-name`} onClick={props.onChange}>
+          <span>Titan</span>
+        </li>
+      </ul>
+    </div>
   );
 };
 
+//MESSAGES FOR EACH COMPONENT
+
 export const Message = (props) => {
-  const { destination, distance, travel, images, name } = props.message;
+  const { description, distance, travel, images, name } = props.message;
   const { png, webp } = images;
+  console.log("image", png);
   return (
-    <div className='messageBoard'>
-      <div>
-        <img src='./assets/destination/images-europa.png' alt='sorry not yet' />
+    <div className={`${props.className}_msg-board`}>
+      <div className={`${props.className}_left-side`}>
+        <img src={`${png}`} alt='sorry not yet' />
       </div>
-      <h3>{name}</h3>
-      <p>{destination}</p>
-      <div>
-        <span>AVG.DISTANCE</span>
-        <h4>{distance}</h4>
-        <span>EST. TRAVEL TIME</span>
-        <h4>{travel}</h4>
+      <div className={`${props.className}_right-side`}>
+        <h3 className={`${props.className}_name`}>{name}</h3>
+        <p className={`${props.className}_para`}>{description}</p>
+        <div className={`${props.className}_stats`}>
+          <div className={`${props.className}_avg`}>
+            <span>AVG.DISTANCE</span>
+            <h4>{distance}</h4>
+          </div>
+          <div className={`${props.className}`}>
+            <span>EST. TRAVEL TIME</span>
+            <h4>{travel}</h4>
+          </div>
+        </div>
       </div>
     </div>
   );

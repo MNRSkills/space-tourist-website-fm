@@ -1,7 +1,6 @@
 body {
-  background-color: bisque;
-}
-
-.crew_bg {
-  background-color: red;
+  /* background-color: bisque; */
+  background: transparent;
+  margin: 0;
+  padding: 0;
 }
